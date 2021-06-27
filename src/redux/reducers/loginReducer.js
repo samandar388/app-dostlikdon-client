@@ -1,9 +1,9 @@
 
 const initialState = {
-    isLoading: false
+    isLoading: false,
+    open: false,
 };
 
-
-export const loginReducer = (state = initialState, action) =>{
+export const loginReducer = (state = initialState, action) => {
     return state;
 };

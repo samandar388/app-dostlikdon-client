@@ -5,15 +5,16 @@ import {toast} from "react-toastify";
 export function login(event, errors, values, history) {
     return function (dispatch) {
         axios.post(API_PATH + "auth/login", values)
-            .then((res)=>{
+            .then((res) => {
                 console.log(res);
                 localStorage.setItem(TOKEN_NAME, res.data.tokenType + " " + res.data.accessToken);
-                dispatch({type: ""})
+                dispatch({type: ""});
                 history.push("/admin/menus");
+                toast.success("Muvaffaqiyatli !!!")
             })
-            .catch((error)=>{
+            .catch((error) => {
                 toast.error(error.response.data.message);
             });
-        return {}
+
     }
 }
